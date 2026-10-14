@@ -1,3 +1,4 @@
+
 package test.java;
 
 import main.java.App;
@@ -6,14 +7,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppTest {
 
-    @Test
-    public void testReverseString() {
-        App obj = new App();
+    App obj = new App();
 
+    @Test
+    public void testReverseHello() {
         assertEquals("olleH", obj.reverseString("Hello"));
+    }
+
+    @Test
+    public void testReverseJava() {
         assertEquals("avaJ", obj.reverseString("Java"));
+    }
+
+    @Test
+    public void testReverseEmptyString() {
         assertEquals("", obj.reverseString(""));
+    }
+
+    @Test
+    public void testReverseSingleCharacter() {
         assertEquals("a", obj.reverseString("a"));
+    }
+
+    @Test
+    public void testReverseNumbers() {
         assertEquals("321", obj.reverseString("123"));
     }
 }
