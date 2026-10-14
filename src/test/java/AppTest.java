@@ -4,33 +4,20 @@ package test.java;
 import main.java.App;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest {
 
-    App obj = new App();
-
     @Test
-    public void testReverseHello() {
-        assertEquals("olleH", obj.reverseString("Hello"));
+    public void testPalindrome() {
+        App obj = new App();
+
+        assertTrue(obj.isPalindrome(121));
+        assertTrue(obj.isPalindrome(1221));
+        assertTrue(obj.isPalindrome(0));
+        assertFalse(obj.isPalindrome(123));
+        assertFalse(obj.isPalindrome(-121));
     }
 
-    @Test
-    public void testReverseJava() {
-        assertEquals("avaJ", obj.reverseString("Java"));
-    }
-
-    @Test
-    public void testReverseEmptyString() {
-        assertEquals("", obj.reverseString(""));
-    }
-
-    @Test
-    public void testReverseSingleCharacter() {
-        assertEquals("a", obj.reverseString("a"));
-    }
-
-    @Test
-    public void testReverseNumbers() {
-        assertEquals("321", obj.reverseString("123"));
-    }
 }
