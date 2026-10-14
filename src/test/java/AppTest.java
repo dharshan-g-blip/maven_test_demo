@@ -8,34 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest {
-     @Test
-    public void testPalindrome121() {
+         @Test
+    public void testSimpleInterest() {
         App obj = new App();
-        assertTrue(obj.isPalindrome(121));
-    }
 
-    @Test
-    public void testPalindrome1221() {
-        App obj = new App();
-        assertTrue(obj.isPalindrome(1221));
-    }
+        assertEquals(1000.0,
+                     obj.simpleInterest(10000, 5, 2), 0.001);
 
-    @Test
-    public void testPalindromeZero() {
-        App obj = new App();
-        assertTrue(obj.isPalindrome(0));
-    }
+        assertEquals(500.0,
+                     obj.simpleInterest(5000, 5, 2), 0.001);
 
-    @Test
-    public void testNotPalindrome123() {
-        App obj = new App();
-        assertFalse(obj.isPalindrome(123));
-    }
+        assertEquals(0.0,
+                     obj.simpleInterest(1000, 0, 2), 0.001);
 
-    @Test
-    public void testNegativeNumber() {
-        App obj = new App();
-        assertFalse(obj.isPalindrome(-121));
+        assertEquals(200.0,
+                     obj.simpleInterest(2000, 5, 2), 0.001);
     }
 
 }
