@@ -1,9 +1,12 @@
 package test.java;
 
 import main.java.App;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppTest {
-        @Test
+
+    @Test
     public void testReverseString() {
         App obj = new App();
 
@@ -13,5 +16,4 @@ public class AppTest {
         assertEquals("a", obj.reverseString("a"));
         assertEquals("321", obj.reverseString("123"));
     }
-
 }
