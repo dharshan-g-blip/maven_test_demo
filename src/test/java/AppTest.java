@@ -5,37 +5,25 @@ import main.java.App;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppTest {
-      @Test
-    public void testSimpleInterest1() {
+     @Test
+    public void testGrade() {
         App obj = new App();
-        assertEquals(1000.0, obj.simpleInterest(10000, 5, 2), 0.001);
+
+        assertEquals("A", obj.calculateGrade(95));
+        assertEquals("B", obj.calculateGrade(85));
+        assertEquals("C", obj.calculateGrade(75));
+        assertEquals("D", obj.calculateGrade(65));
+        assertEquals("E", obj.calculateGrade(55));
+        assertEquals("F", obj.calculateGrade(35));
+
+        assertThrows(IllegalArgumentException.class,
+                     () -> obj.calculateGrade(110));
     }
 
-    @Test
-    public void testSimpleInterest2() {
-        App obj = new App();
-        assertEquals(500.0, obj.simpleInterest(5000, 5, 2), 0.001);
-    }
 
-    @Test
-    public void testSimpleInterest3() {
-        App obj = new App();
-        assertEquals(0.0, obj.simpleInterest(1000, 0, 2), 0.001);
-    }
-
-    @Test
-    public void testSimpleInterest4() {
-        App obj = new App();
-        assertEquals(200.0, obj.simpleInterest(2000, 5, 2), 0.001);
-    }
-
-    @Test
-    public void testSimpleInterest5() {
-        App obj = new App();
-        assertEquals(150.0, obj.simpleInterest(1000, 5, 3), 0.001);
-    }
 
 }
