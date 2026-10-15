@@ -24,5 +24,19 @@ public class AppTest {
                      () -> obj.calculateGrade(110));
     }
 
+     @Test
+    public void testGrade() {
+        App obj = new App();
+
+        assertEquals("A", obj.calculateGrade(95));
+        assertEquals("B", obj.calculateGrade(85));
+        assertEquals("C", obj.calculateGrade(75));
+        assertEquals("D", obj.calculateGrade(65));
+        assertEquals("E", obj.calculateGrade(55));
+        assertEquals("F", obj.calculateGrade(35));
+
+        assertThrows(IllegalArgumentException.class,
+                     () -> obj.calculateGrade(110)); 
+    }
 
 }
